@@ -50,7 +50,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^16.1.4",
+    "eslint-config-next": "14.2.0",
     "framer-motion": "^12.23.12",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.446.0",

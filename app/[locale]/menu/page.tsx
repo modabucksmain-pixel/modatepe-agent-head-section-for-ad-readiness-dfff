@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getTranslations, type Locale } from '@/lib/i18n';
-import { MessageCircle, Clock } from 'lucide-react';
+import { MessageCircle, Clock, Coffee, Utensils, Zap, Plus, Info } from 'lucide-react';
 
 interface MenuPageProps {
     params: { locale: Locale };
@@ -28,55 +28,56 @@ export default async function MenuPage({ params: { locale } }: MenuPageProps) {
 
     const menuItems = {
         breakfast: [
-            { name: 'Serpme Kahvaltı', price: '₺600', description: 'Sıcaklar dahil kişi başı kahvaltı ücretimizdir. Kayana Kuymak Kalem böreği Cips Turşu ve Patates kavurması sahanda yumurta semaver ve soğuklar dahildir. Tek kişilik kahvaltı verilmemekte ve çocuk için sevis ücreti alınmamaktadır' }
+            {
+                name: 'Serpme Kahvaltı',
+                price: '₺1600',
+                description: 'KUYMAK-MENEMEN-SAHANDA YUMURTA -Sigara Böreği-Cips-Kaygana-Pankek-Çeçil peynir-Örgü peynir-Siyah Zeytin-Izgara Zeytin-Patates Kavurması-Turşu Kavurması-Mevsim Reçelleri-Çikolata-Bal-Tereyağı-Domates-Salatalık-Beyaz Peynir-TERMOS ÇAY',
+                highlight: true
+            }
         ],
         mainCourses: [
-            { name: '250g dana antrikot porsiyon', price: '₺700', description: 'Yalnızca yerli jersey' },
-            { name: '250g kuzu pirzola porsiyon', price: '₺700', description: 'Balıkesir kıvırcık kuzu' },
-            { name: '300g köfte porsiyon', price: '₺500', description: 'Orijinal Akçaabat jersey köfte' },
-            { name: 'Saç kavurma porsiyon', price: '₺700', description: 'Meşhur jersey saç kavurma' },
-            { name: '300g tavuk ızgara porsiyon', price: '₺700', description: 'Banvit kemiksiz pirzola' }
+            { name: 'Kuzu Pirzola Porsiyon', price: '₺800', description: 'Balıkesir kıvırcık kuzu' },
+            { name: 'Dana Antrikot Porsiyon', price: '₺800', description: 'Yalnızca yerli jersey' },
+            { name: 'Saç Kavurma Porsiyon', price: '₺800', description: 'Meşhur jersey saç kavurma' },
+            { name: 'Köfte Porsiyon', price: '₺550', description: 'Orijinal Akçaabat jersey köfte' },
+            { name: 'Tavuk Izgara Porsiyon', price: '₺500', description: 'Banvit kemiksiz pirzola' },
+            { name: 'Köfte Kilo', price: '₺1550', description: 'Çiğ veya pişmiş kilo ile köfte satışı, Cips ve közlenmiş sebze ikramı' }
+        ],
+        drinks: [
+            { name: 'Türk Kahvesi', price: '₺150', description: 'Geleneksel Türk Kahvesi' },
+            { name: 'Çay', price: '₺40', description: 'Taze demlenmiş Rize çayı' },
+            { name: 'Nescafe', price: '₺100', description: 'Sütlü veya sade' },
+            { name: 'Meşrubat', price: '₺125', description: 'Cola, Fanta, Sprite, Ice Tea' },
+            { name: 'Su', price: '₺30', description: 'Cam şişe' }
         ],
         desserts: [
-            { name: 'Sütlaç', price: '₺125', description: 'Hamsiköy sütlacı' }
+            { name: 'Sütlaç', price: '₺175', description: 'Hamsiköy sütlacı (Fırın)' }
         ]
     };
 
     return (
         <>
             {/* Hero Section */}
-            <section className="relative h-96 flex items-center justify-center overflow-hidden">
+            <section className="relative h-80 flex items-center justify-center overflow-hidden">
                 <Image
                     src={kahvalti}
                     alt={translations.restaurant.menu.title}
                     fill
                     className="object-cover"
                     sizes="100vw"
+                    priority
                 />
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/50" />
 
                 <div className="relative z-10 text-center text-white px-4">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in tracking-tight">
                         {translations.restaurant.menu.title}
                     </h1>
-                    <p className="text-lg md:text-xl max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl max-w-2xl mx-auto font-light opacity-90">
                         Karadeniz mutfağının seçkin lezzetleri
                     </p>
-                </div>
-            </section>
-
-            {/* Menu Info */}
-            <section className="py-16">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <div className="text-center mb-12">
-                        <div className="flex items-center justify-center gap-4 bg-brand-gray-100 rounded-2xl py-6 px-8 mb-8">
-                            <Clock className="w-6 h-6 text-brand-green" />
-                            <span className="text-lg font-semibold text-brand-green">
-                                {translations.hours.opening}
-                            </span>
-                        </div>
-
-                        <Button asChild className="whatsapp-btn text-lg px-8 py-4 hover-glow">
+                    <div className="mt-8">
+                        <Button asChild className="whatsapp-btn text-lg px-8 py-6 rounded-full hover-glow transition-all duration-300 border-2 border-white/20 backdrop-blur-sm">
                             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                                 <MessageCircle className="w-5 h-5 mr-2" />
                                 {translations.cta.bookNow}
@@ -87,102 +88,103 @@ export default async function MenuPage({ params: { locale } }: MenuPageProps) {
             </section>
 
             {/* Menu Section */}
-            <section className="py-16 bg-gradient-to-br from-green-50 via-white to-yellow-50">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-brand-green">
-                        {translations.restaurant.menu.title}
-                    </h2>
-                    <p className="text-center text-brand-gray-600 mb-12 max-w-2xl mx-auto">
-                        Taze malzemelerle hazırlanan özel lezzetlerimiz
-                    </p>
+            <section className="py-12 bg-white min-h-screen">
+                <div className="container mx-auto px-4 max-w-3xl">
+                    <Tabs defaultValue="breakfast" className="w-full">
+                        <TabsList className="flex w-full overflow-x-auto mb-8 bg-white shadow-sm p-1.5 rounded-2xl border border-slate-100 sticky top-4 z-40 no-scrollbar">
+                            <TabsTrigger
+                                value="breakfast"
+                                className="flex-1 min-w-[100px] data-[state=active]:bg-brand-green data-[state=active]:text-white rounded-xl font-medium transition-all py-3"
+                            >
+                                <Utensils className="w-4 h-4 mr-2" />
+                                {translations.restaurant.menu.breakfast}
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="mainCourses"
+                                className="flex-1 min-w-[110px] data-[state=active]:bg-brand-green data-[state=active]:text-white rounded-xl font-medium transition-all py-3"
+                            >
+                                <Zap className="w-4 h-4 mr-2" />
+                                {translations.restaurant.menu.mainCourses}
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="drinks"
+                                className="flex-1 min-w-[100px] data-[state=active]:bg-brand-green data-[state=active]:text-white rounded-xl font-medium transition-all py-3"
+                            >
+                                <Coffee className="w-4 h-4 mr-2" />
+                                {translations.restaurant.menu.drinks}
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="desserts"
+                                className="flex-1 min-w-[100px] data-[state=active]:bg-brand-green data-[state=active]:text-white rounded-xl font-medium transition-all py-3"
+                            >
+                                <span className="mr-2">🍰</span>
+                                {translations.restaurant.menu.desserts}
+                            </TabsTrigger>
+                        </TabsList>
 
-                    <div className="max-w-4xl mx-auto">
-                        <Tabs defaultValue="breakfast" className="w-full">
-                            <TabsList className="grid w-full grid-cols-3 mb-8 bg-white shadow-soft p-2 rounded-2xl">
-                                <TabsTrigger
-                                    value="breakfast"
-                                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:to-orange-400 data-[state=active]:text-white rounded-xl font-semibold transition-all"
-                                >
-                                    ☀️ {translations.restaurant.menu.breakfast}
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="mainCourses"
-                                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-red-500 data-[state=active]:to-orange-500 data-[state=active]:text-white rounded-xl font-semibold transition-all"
-                                >
-                                    🍖 {translations.restaurant.menu.mainCourses}
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="desserts"
-                                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-400 data-[state=active]:to-purple-400 data-[state=active]:text-white rounded-xl font-semibold transition-all"
-                                >
-                                    🍰 {translations.restaurant.menu.desserts}
-                                </TabsTrigger>
-                            </TabsList>
+                        {Object.entries(menuItems).map(([category, items]) => {
+                            const categoryColors = {
+                                breakfast: 'from-yellow-50 to-orange-50 border-yellow-200',
+                                mainCourses: 'from-red-50 to-orange-50 border-red-200',
+                                drinks: 'from-blue-50 to-teal-50 border-blue-200',
+                                desserts: 'from-pink-50 to-purple-50 border-pink-200'
+                            };
 
-                            {Object.entries(menuItems).map(([category, items]) => {
-                                const categoryColors = {
-                                    breakfast: 'from-yellow-50 to-orange-50 border-yellow-200',
-                                    mainCourses: 'from-red-50 to-orange-50 border-red-200',
-                                    desserts: 'from-pink-50 to-purple-50 border-pink-200'
-                                };
+                            const priceColors = {
+                                breakfast: 'text-orange-600',
+                                mainCourses: 'text-red-600',
+                                drinks: 'text-blue-600',
+                                desserts: 'text-pink-600'
+                            };
 
-                                const priceColors = {
-                                    breakfast: 'text-orange-600',
-                                    mainCourses: 'text-red-600',
-                                    desserts: 'text-pink-600'
-                                };
-
-                                return (
-                                    <TabsContent key={category} value={category} className="space-y-4">
-                                        <div className="grid gap-6">
-                                            {items.map((item, index) => (
-                                                <Card
-                                                    key={index}
-                                                    className={`border-2 shadow-glow hover-lift overflow-hidden bg-gradient-to-br ${categoryColors[category as keyof typeof categoryColors]} animate-scale-in`}
-                                                    style={{ animationDelay: `${index * 0.1}s` }}
-                                                >
-                                                    <CardContent className="p-6 relative">
-                                                        <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full -mr-16 -mt-16"></div>
-                                                        <div className="flex justify-between items-start gap-6 relative">
-                                                            <div className="flex-1">
-                                                                <div className="flex items-center gap-2 mb-3">
-                                                                    <div className="w-2 h-2 rounded-full bg-brand-green animate-pulse"></div>
-                                                                    <h3 className="font-bold text-xl text-brand-green">
-                                                                        {item.name}
-                                                                    </h3>
-                                                                </div>
-                                                                <p className="text-gray-700 leading-relaxed">
-                                                                    {item.description}
-                                                                </p>
-                                                            </div>
-                                                            <div className="text-right flex-shrink-0">
-                                                                <div className={`text-3xl font-black ${priceColors[category as keyof typeof priceColors]} drop-shadow-sm`}>
-                                                                    {item.price}
-                                                                </div>
-                                                                <div className="text-xs text-gray-500 mt-1">kişi başı</div>
-                                                            </div>
+                            return (
+                                <TabsContent key={category} value={category} className="space-y-4 animate-slide-up">
+                                    {items.map((item, index) => (
+                                        <Card
+                                            key={index}
+                                            className={`border-2 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.01] bg-gradient-to-br ${categoryColors[category as keyof typeof categoryColors]} overflow-hidden`}
+                                        >
+                                            <CardContent className="p-6 relative">
+                                                <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-full -mr-16 -mt-16 pointer-events-none"></div>
+                                                <div className="flex justify-between items-start gap-4 relative">
+                                                    <div className="flex-1 space-y-2">
+                                                        <div className="flex items-center gap-2">
+                                                            <div className="w-2 h-2 rounded-full bg-brand-green opacity-60"></div>
+                                                            <h3 className="font-bold text-xl text-brand-green leading-tight">
+                                                                {item.name}
+                                                            </h3>
                                                         </div>
-                                                    </CardContent>
-                                                </Card>
-                                            ))}
-                                        </div>
-                                    </TabsContent>
-                                );
-                            })}
-                        </Tabs>
-                    </div>
+                                                        {item.description && (
+                                                            <p className="text-gray-700 leading-relaxed text-sm">
+                                                                {item.description}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                    <div className="flex-shrink-0 text-right">
+                                                        <div className={`text-2xl font-black ${priceColors[category as keyof typeof priceColors]} drop-shadow-sm`}>
+                                                            {item.price}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+                                    ))}
+                                </TabsContent>
+                            );
+                        })}
+                    </Tabs>
 
-                    <div className="mt-12 text-center">
-                        <div className="inline-block bg-white rounded-2xl shadow-soft p-6 max-w-2xl">
-                            <p className="text-sm text-gray-600 mb-4">
-                                💡 <strong>Not:</strong> Fiyatlar değişkenlik gösterebilir. Güncel fiyatlar için lütfen bizimle iletişime geçin.
-                            </p>
-                            <Button asChild className="whatsapp-btn hover-glow">
-                                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                                    <MessageCircle className="w-4 h-4 mr-2" />
-                                    Rezervasyon Yap
-                                </a>
-                            </Button>
+                    <div className="mt-12 mb-8">
+                        <div className="bg-blue-50 border border-blue-100 rounded-2xl p-5 flex items-start gap-4 shadow-sm">
+                            <Info className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                            <div>
+                                <h4 className="font-semibold text-blue-900 mb-1">Bilgilendirme</h4>
+                                <p className="text-sm text-blue-800 leading-relaxed">
+                                    Fiyatlarımız güncel piyasa koşullarına göre değişiklik gösterebilir.
+                                    Alerjen uyarısı ve detaylı bilgi için lütfen servis personelimizden yardım isteyiniz.
+                                    Hesaplarınıza %10 servis ücreti eklenebilir.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

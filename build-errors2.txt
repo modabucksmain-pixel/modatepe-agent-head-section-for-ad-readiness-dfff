@@ -1,0 +1,70 @@
+﻿
+> nextjs@0.1.0 build
+> next build
+
+  Ôû▓ Next.js 14.2.35
+
+   Creating an optimized production build ...
+node.exe :  ÔÜá For productio
+n Image Optimization with Nex
+t.js, the optional 'sharp' pa
+ckage is strongly recommended
+. Run 'npm i sharp', and Next
+.js will use it automatically
+ for Image Optimization.
+At line:1 char:1
++ & "C:\Program Files\nodejs/
+node.exe" "C:\Program Files\n
+odejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: ( ÔÜá Fo  
+  r produc...e Optimizatio   
+ n.:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+Read more: https://nextjs.org
+/docs/messages/sharp-missing-
+in-production
+ ÔÜá For production Image Opt
+imization with Next.js, the o
+ptional 'sharp' package is st
+rongly recommended. Run 'npm 
+i sharp', and Next.js will us
+e it automatically for Image 
+Optimization.
+Read more: https://nextjs.org
+/docs/messages/sharp-missing-
+in-production
+ Ô£ô Compiled successfully
+   Skipping linting
+   Checking validity of types ...
+Failed to compile.
+
+./components/ui/form.tsx:11:3
+Type error: Module '"react-ho
+ok-form"' has no exported mem
+ber 'FormProvider'.
+
+[0m [90m  9 |[39m   [33mF
+ieldPath[39m[33m,[39m[0m
+[0m [90m 10 |[39m   [33mF
+ieldValues[39m[33m,[39m[0
+m
+[0m[31m[1m>[22m[39m[90m
+ 11 |[39m   [33mFormProvide
+r[39m[33m,[39m[0m
+[0m [90m    |[39m   [31m
+[1m^[22m[39m[0m
+[0m [90m 12 |[39m   useFor
+mContext[33m,[39m[0m
+[0m [90m 13 |[39m } [36mf
+rom[39m [32m'react-hook-for
+m'[39m[33m;[39m[0m
+[0m [90m 14 |[39m[0m
+Next.js build worker exited w
+ith code: 1 and signal: null

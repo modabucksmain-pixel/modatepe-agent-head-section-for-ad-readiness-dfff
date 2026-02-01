@@ -54,6 +54,60 @@
       "drinks": "İçecekler",
       "desserts": "Tatlılar"
     },
+    "menuItems": {
+      "serpmeKahvalti": {
+        "name": "Serpme Kahvaltı",
+        "description": "Kişi başı zengin kahvaltı deneyimi • Kuymak, menemen, sahanda yumurta • Sigara böreği, kaygana, pankek • Çeçil & örgü peyniri, siyah zeytin, beyaz peynir • Patates kavurması, turşu, mevsim reçelleri • Bal, tereyağı, çikolata • Taze domates, salatalık • Termos çay dahil. (Minimum 2 kişi, çocuk servis ücreti alınmaz)"
+      },
+      "kuzuPirzola": {
+        "name": "Kuzu Pirzola Porsiyon",
+        "description": "Balıkesir kıvırcık kuzu"
+      },
+      "danaAntrikot": {
+        "name": "Dana Antrikot Porsiyon",
+        "description": "Yalnızca yerli jersey"
+      },
+      "sacKavurma": {
+        "name": "Saç Kavurma Porsiyon",
+        "description": "Meşhur jersey saç kavurma"
+      },
+      "kofte": {
+        "name": "Köfte Porsiyon",
+        "description": "Orijinal Akçaabat jersey köfte"
+      },
+      "tavukIzgara": {
+        "name": "Tavuk Izgara Porsiyon",
+        "description": "Banvit kemiksiz pirzola"
+      },
+      "kofteKilo": {
+        "name": "Köfte Kilo",
+        "description": "Çiğ veya pişmiş kilo ile köfte satışı, Cips ve közlenmiş sebze ikramı"
+      },
+      "turkKahvesi": {
+        "name": "Türk Kahvesi",
+        "description": "Geleneksel Türk Kahvesi"
+      },
+      "cay": {
+        "name": "Çay",
+        "description": "Taze demlenmiş Rize çayı"
+      },
+      "nescafe": {
+        "name": "Nescafe",
+        "description": "Sütlü veya sade"
+      },
+      "mesrubat": {
+        "name": "Meşrubat",
+        "description": "Cola, Fanta, Sprite, Ice Tea"
+      },
+      "su": {
+        "name": "Su",
+        "description": "Cam şişe"
+      },
+      "sutlac": {
+        "name": "Sütlaç",
+        "description": "Hamsiköy sütlacı (Fırın)"
+      }
+    },
     "gallery": {
       "title": "Restoran Galerisi"
     }

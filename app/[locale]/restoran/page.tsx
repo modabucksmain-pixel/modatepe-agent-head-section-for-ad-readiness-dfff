@@ -18,7 +18,7 @@ interface RestaurantPageProps {
 
 export async function generateMetadata({ params }: RestaurantPageProps): Promise<Metadata> {
   const translations = await getTranslations(params.locale);
-  
+
   return {
     title: translations.restaurant.title,
     description: translations.restaurant.intro,
@@ -32,17 +32,17 @@ export default async function RestaurantPage({ params: { locale } }: RestaurantP
 
   const menuItems = {
     breakfast: [
-      { name: 'Serpme Kahvaltı', price: '₺600', description: 'Sıcaklar dahil kişi başı kahvaltı ücretimizdir. Kayana Kuymak Kalem böreği Cips Turşu ve Patates kavurması sahanda yumurta semaver ve soğuklar dahildir. Tek kişilik kahvaltı verilmemekte ve çocuk için sevis ücreti alınmamaktadır' }
+      { name: translations.restaurant.menuItems.serpmeKahvalti.name, price: '₺1200', description: translations.restaurant.menuItems.serpmeKahvalti.description }
     ],
     mainCourses: [
-      { name: '250g dana antrikot porsiyon', price: '₺700', description: 'Yanlızca yerli jersey' },
-      { name: '250g kuzu pirzola porsiyon', price: '₺700', description: 'Balıkesir kıvırcık kuzu' },
-      { name: '300g köfte porsiyon', price: '₺500', description: 'Orijinal Akcaabat jersey köfte' },
-      { name: 'Saç kavurma porsiyon', price: '₺700', description: 'Meşhur jersey saç kavurma' },
-      { name: '300g tavuk ızgara porsiyon', price: '₺700', description: 'Banvit kemiksiz pirzola' }
+      { name: translations.restaurant.menuItems.danaAntrikot.name, price: '₺700', description: translations.restaurant.menuItems.danaAntrikot.description },
+      { name: translations.restaurant.menuItems.kuzuPirzola.name, price: '₺700', description: translations.restaurant.menuItems.kuzuPirzola.description },
+      { name: translations.restaurant.menuItems.kofte.name, price: '₺500', description: translations.restaurant.menuItems.kofte.description },
+      { name: translations.restaurant.menuItems.sacKavurma.name, price: '₺700', description: translations.restaurant.menuItems.sacKavurma.description },
+      { name: translations.restaurant.menuItems.tavukIzgara.name, price: '₺700', description: translations.restaurant.menuItems.tavukIzgara.description }
     ],
     desserts: [
-      { name: 'Sütlaç', price: '₺125', description: 'Hamsiköy sütlacı' }
+      { name: translations.restaurant.menuItems.sutlac.name, price: '₺125', description: translations.restaurant.menuItems.sutlac.description }
     ]
   };
 
@@ -67,7 +67,7 @@ export default async function RestaurantPage({ params: { locale } }: RestaurantP
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/50" />
-        
+
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
             {translations.restaurant.title}
@@ -82,7 +82,7 @@ export default async function RestaurantPage({ params: { locale } }: RestaurantP
             <p className="text-lg text-brand-gray-600 leading-relaxed mb-8">
               {translations.restaurant.intro}
             </p>
-            
+
             <div className="flex items-center justify-center gap-4 bg-brand-gray-100 rounded-2xl py-6 px-8 mb-8">
               <Clock className="w-6 h-6 text-brand-green" />
               <span className="text-lg font-semibold text-brand-green">
@@ -153,11 +153,11 @@ export default async function RestaurantPage({ params: { locale } }: RestaurantP
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-brand-green">
             {translations.restaurant.gallery.title}
           </h2>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {galleryImages.map((image, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="relative h-48 md:h-64 rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 shadow-lg"
               >
                 <Image

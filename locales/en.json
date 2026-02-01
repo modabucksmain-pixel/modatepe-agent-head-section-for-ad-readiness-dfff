@@ -51,7 +51,62 @@
       "title": "Our Menu",
       "breakfast": "Breakfast",
       "mainCourses": "Main Courses",
+      "drinks": "Beverages",
       "desserts": "Desserts"
+    },
+    "menuItems": {
+      "serpmeKahvalti": {
+        "name": "Traditional Spread Breakfast",
+        "description": "Rich breakfast experience per person • Kuymak (cheese fondue), menemen, fried eggs • Cheese rolls, pancakes • Çeçil & braided cheese, black olives, white cheese • Fried potatoes, pickles, seasonal jams • Honey, butter, chocolate • Fresh tomatoes, cucumbers • Samovar tea included. (Minimum 2 people, no children's service charge)"
+      },
+      "kuzuPirzola": {
+        "name": "Lamb Chops",
+        "description": "Balıkesir curly lamb"
+      },
+      "danaAntrikot": {
+        "name": "Beef Ribeye",
+        "description": "Local jersey beef only"
+      },
+      "sacKavurma": {
+        "name": "Sautéed Meat",
+        "description": "Famous jersey sac kavurma"
+      },
+      "kofte": {
+        "name": "Meatballs",
+        "description": "Original Akçaabat jersey meatballs"
+      },
+      "tavukIzgara": {
+        "name": "Grilled Chicken",
+        "description": "Boneless chicken cutlet"
+      },
+      "kofteKilo": {
+        "name": "Meatballs by Kilo",
+        "description": "Raw or cooked meatballs by kilo. Served with chips and grilled vegetables"
+      },
+      "turkKahvesi": {
+        "name": "Turkish Coffee",
+        "description": "Traditional Turkish Coffee"
+      },
+      "cay": {
+        "name": "Tea",
+        "description": "Freshly brewed Rize tea"
+      },
+      "nescafe": {
+        "name": "Instant Coffee",
+        "description": "With milk or plain"
+      },
+      "mesrubat": {
+        "name": "Soft Drinks",
+        "description": "Cola, Fanta, Sprite, Ice Tea"
+      },
+      "su": {
+        "name": "Water",
+        "description": "Glass bottle"
+      },
+      "sutlac": {
+        "name": "Rice Pudding",
+        "description": "Hamsiköy style rice pudding (Baked)"
+      }
     },
     "gallery": {
       "title": "Restaurant Gallery"

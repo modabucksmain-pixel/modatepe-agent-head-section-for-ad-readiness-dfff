@@ -29,29 +29,29 @@ export default async function MenuPage({ params: { locale } }: MenuPageProps) {
     const menuItems = {
         breakfast: [
             {
-                name: 'Serpme Kahvaltı',
-                price: '₺1600',
-                description: 'KUYMAK-MENEMEN-SAHANDA YUMURTA -Sigara Böreği-Cips-Kaygana-Pankek-Çeçil peynir-Örgü peynir-Siyah Zeytin-Izgara Zeytin-Patates Kavurması-Turşu Kavurması-Mevsim Reçelleri-Çikolata-Bal-Tereyağı-Domates-Salatalık-Beyaz Peynir-TERMOS ÇAY',
+                name: translations.restaurant.menuItems.serpmeKahvalti.name,
+                price: '₺1200',
+                description: translations.restaurant.menuItems.serpmeKahvalti.description,
                 highlight: true
             }
         ],
         mainCourses: [
-            { name: 'Kuzu Pirzola Porsiyon', price: '₺800', description: 'Balıkesir kıvırcık kuzu' },
-            { name: 'Dana Antrikot Porsiyon', price: '₺800', description: 'Yalnızca yerli jersey' },
-            { name: 'Saç Kavurma Porsiyon', price: '₺800', description: 'Meşhur jersey saç kavurma' },
-            { name: 'Köfte Porsiyon', price: '₺550', description: 'Orijinal Akçaabat jersey köfte' },
-            { name: 'Tavuk Izgara Porsiyon', price: '₺500', description: 'Banvit kemiksiz pirzola' },
-            { name: 'Köfte Kilo', price: '₺1550', description: 'Çiğ veya pişmiş kilo ile köfte satışı, Cips ve közlenmiş sebze ikramı' }
+            { name: translations.restaurant.menuItems.kuzuPirzola.name, price: '₺800', description: translations.restaurant.menuItems.kuzuPirzola.description },
+            { name: translations.restaurant.menuItems.danaAntrikot.name, price: '₺800', description: translations.restaurant.menuItems.danaAntrikot.description },
+            { name: translations.restaurant.menuItems.sacKavurma.name, price: '₺800', description: translations.restaurant.menuItems.sacKavurma.description },
+            { name: translations.restaurant.menuItems.kofte.name, price: '₺550', description: translations.restaurant.menuItems.kofte.description },
+            { name: translations.restaurant.menuItems.tavukIzgara.name, price: '₺500', description: translations.restaurant.menuItems.tavukIzgara.description },
+            { name: translations.restaurant.menuItems.kofteKilo.name, price: '₺1550', description: translations.restaurant.menuItems.kofteKilo.description }
         ],
         drinks: [
-            { name: 'Türk Kahvesi', price: '₺150', description: 'Geleneksel Türk Kahvesi' },
-            { name: 'Çay', price: '₺40', description: 'Taze demlenmiş Rize çayı' },
-            { name: 'Nescafe', price: '₺100', description: 'Sütlü veya sade' },
-            { name: 'Meşrubat', price: '₺125', description: 'Cola, Fanta, Sprite, Ice Tea' },
-            { name: 'Su', price: '₺30', description: 'Cam şişe' }
+            { name: translations.restaurant.menuItems.turkKahvesi.name, price: '₺150', description: translations.restaurant.menuItems.turkKahvesi.description },
+            { name: translations.restaurant.menuItems.cay.name, price: '₺40', description: translations.restaurant.menuItems.cay.description },
+            { name: translations.restaurant.menuItems.nescafe.name, price: '₺100', description: translations.restaurant.menuItems.nescafe.description },
+            { name: translations.restaurant.menuItems.mesrubat.name, price: '₺125', description: translations.restaurant.menuItems.mesrubat.description },
+            { name: translations.restaurant.menuItems.su.name, price: '₺30', description: translations.restaurant.menuItems.su.description }
         ],
         desserts: [
-            { name: 'Sütlaç', price: '₺175', description: 'Hamsiköy sütlacı (Fırın)' }
+            { name: translations.restaurant.menuItems.sutlac.name, price: '₺175', description: translations.restaurant.menuItems.sutlac.description }
         ]
     };
 

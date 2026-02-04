@@ -1,0 +1,250 @@
+================================================================================
+                    MODATEPE WEBSITE - PROJECT STRUCTURE
+                         modatepecafe.com
+================================================================================
+
+Last Updated: 2026-02-04
+Framework: Next.js 14.2 + TypeScript + Tailwind CSS
+Deployment: Netlify
+
+================================================================================
+                              ROOT FILES
+================================================================================
+
+package.json           - Project dependencies and scripts
+next.config.js         - Next.js configuration (image optimization, security headers)
+tailwind.config.ts     - Tailwind CSS theme configuration
+tsconfig.json          - TypeScript configuration
+middleware.ts          - Locale routing middleware (tr/en/ar)
+netlify.toml           - Netlify deployment configuration
+.env.example           - Environment variables template
+.env.production        - Production environment configuration
+
+================================================================================
+                           APP DIRECTORY
+================================================================================
+
+app/
+├── layout.tsx            - Root layout with SEO meta tags, Open Graph
+├── page.tsx              - Root redirect page
+├── globals.css           - Global CSS styles
+├── sitemap.ts            - Dynamic sitemap for SEO (modatepecafe.com)
+├── manifest.ts           - PWA manifest generator
+│
+├── robots.txt/
+│   └── route.ts          - Robots.txt route handler
+│
+├── ads.txt/
+│   └── route.ts          - Google AdSense ads.txt route handler
+│
+├── api/
+│   ├── contact/
+│   │   └── route.ts      - Contact form API endpoint
+│   └── feedback/
+│       └── route.ts      - Feedback form API endpoint
+│
+└── [locale]/             - Internationalized pages (tr/en/ar)
+    ├── layout.tsx        - Locale layout with Header/Footer + AdSense
+    ├── page.tsx          - Homepage
+    ├── not-found.tsx     - 404 error page
+    │
+    ├── konaklama/
+    │   └── page.tsx      - Accommodation page
+    │
+    ├── restoran/
+    │   └── page.tsx      - Restaurant page
+    │
+    ├── menu/
+    │   └── page.tsx      - Menu page
+    │
+    ├── galeri/
+    │   └── page.tsx      - Gallery/Facility photos page
+    │
+    ├── iletisim/
+    │   └── page.tsx      - Contact page
+    │
+    └── blog/
+        ├── page.tsx      - Blog listing page
+        └── [slug]/
+            └── page.tsx  - Individual blog post page
+
+================================================================================
+                         COMPONENTS DIRECTORY
+================================================================================
+
+components/
+├── header.tsx            - Site header with navigation
+├── footer.tsx            - Site footer
+├── language-switcher.tsx - TR/EN/AR language switcher
+├── google-map.tsx        - Google Maps embed component
+├── contact-form.tsx      - Contact form with validation
+├── contact-info.tsx      - Contact information display
+├── feedback-form.tsx     - Feedback/complaint form
+├── seo-head.tsx          - SEO meta tags component
+├── toaster.tsx           - Toast notifications wrapper
+│
+└── ui/                   - Shadcn/UI Component Library (47 components)
+    ├── button.tsx        - Button component
+    ├── card.tsx          - Card component
+    ├── dialog.tsx        - Modal dialog
+    ├── form.tsx          - Form components
+    ├── input.tsx         - Input field
+    ├── textarea.tsx      - Textarea field
+    ├── select.tsx        - Select dropdown
+    ├── tabs.tsx          - Tab navigation
+    ├── toast.tsx         - Toast notifications
+    ├── accordion.tsx     - Accordion component
+    ├── carousel.tsx      - Image carousel
+    ├── sheet.tsx         - Slide-out panel
+    ├── drawer.tsx        - Mobile drawer
+    └── ... (34 more UI components)
+
+================================================================================
+                           HOOKS DIRECTORY
+================================================================================
+
+hooks/
+├── index.ts                    - Exports all hooks
+├── use-toast.ts                - Toast notification hook
+├── use-debounce.ts             - Debounce values hook
+├── use-local-storage.ts        - LocalStorage persistence hook
+├── use-media-query.ts          - Responsive media query hook
+├── use-window-size.ts          - Window dimensions hook
+├── use-scroll-lock.ts          - Body scroll lock hook
+├── use-on-click-outside.ts     - Click outside detection hook
+├── use-intersection-observer.ts - Lazy loading/visibility hook
+└── README.md                   - Hooks documentation
+
+================================================================================
+                            LIB DIRECTORY
+================================================================================
+
+lib/
+├── i18n.ts               - Internationalization utilities
+│                           - Locale definitions (tr/en/ar)
+│                           - Translation loader
+│                           - RTL direction support
+│
+└── utils.ts              - Utility functions (cn for classnames)
+
+================================================================================
+                          LOCALES DIRECTORY
+================================================================================
+
+locales/
+├── tr.json               - Turkish translations
+├── en.json               - English translations
+└── ar.json               - Arabic translations
+
+Translation Keys:
+- nav.*                   - Navigation menu
+- cta.*                   - Call-to-action buttons
+- home.*                  - Homepage content
+- restaurant.*            - Restaurant page + menu items
+- accommodation.*         - Accommodation page + room types
+- contact.*               - Contact page + forms
+- blog.*                  - Blog section
+- footer.*                - Footer content
+- notFound.*              - 404 page
+- common.*                - Common UI strings
+
+================================================================================
+                          PUBLIC DIRECTORY
+================================================================================
+
+public/
+├── favicon.ico           - Favicon
+├── favicon.svg           - SVG favicon
+├── apple-touch-icon.png  - Apple touch icon (180x180)
+├── icon-192.png          - PWA icon (192x192)
+├── icon-512.png          - PWA icon (512x512)
+├── manifest.json         - PWA manifest
+├── google*.html          - Google Search Console verification files
+└── Ads.txt               - (Legacy) Google AdSense file
+
+================================================================================
+                          IMAGES DIRECTORY
+================================================================================
+
+images/
+├── manzara4k.jpeg        - Hero background (4K landscape)
+├── galeri2.jpeg          - Gallery image 2
+├── galeri4.jpeg          - Gallery image 4
+├── kahvalti.jpeg         - Breakfast image
+├── koridor.jpeg          - Corridor image
+├── bungalov.jpeg         - Bungalow image
+├── manzaraiyi.jpeg       - Scenic view image
+├── Et.jpeg               - Meat dish image
+├── normaloda.jpeg        - Standard room image
+└── ... (additional images)
+
+================================================================================
+                          CONFIGURATION FILES
+================================================================================
+
+.eslintrc.json            - ESLint configuration
+postcss.config.js         - PostCSS configuration
+components.json           - Shadcn/UI configuration
+.gitignore                - Git ignore rules
+
+================================================================================
+                          MENU ITEMS (from tr.json)
+================================================================================
+
+KAHVALTI (Breakfast):
+- Serpme Kahvaltı         - Traditional spread breakfast with semaver tea
+
+ANA YEMEKLER (Main Courses):
+- Kuzu Pirzola            - Lamb chops
+- Dana Antrikot           - Beef ribeye
+- Saç Kavurma             - Sautéed meat
+- Köfte                   - Meatballs
+- Tavuk Izgara            - Grilled chicken
+- Köfte (Kilo)            - Meatballs by kilo
+
+İÇECEKLER (Drinks):
+- Türk Kahvesi            - Turkish coffee
+- Çay                     - Tea
+- Nescafe                 - Instant coffee
+- Meşrubat                - Soft drinks
+- Su                      - Water
+
+TATLILAR (Desserts):
+- Sütlaç                  - Rice pudding
+
+================================================================================
+                          SEO & PRODUCTION SETTINGS
+================================================================================
+
+Domain: https://modatepecafe.com
+
+Sitemap URLs (21 total):
+- /tr, /tr/konaklama, /tr/restoran, /tr/menu, /tr/galeri, /tr/iletisim, /tr/blog
+- /en, /en/konaklama, /en/restoran, /en/menu, /en/galeri, /en/iletisim, /en/blog
+- /ar, /ar/konaklama, /ar/restoran, /ar/menu, /ar/galeri, /ar/iletisim, /ar/blog
+
+Security Headers:
+- X-Frame-Options: DENY
+- X-Content-Type-Options: nosniff
+- Referrer-Policy: origin-when-cross-origin
+- X-XSS-Protection: 1; mode=block
+
+Image Optimization:
+- Formats: AVIF, WebP
+- Responsive sizes configured
+
+================================================================================
+                             DEPLOYMENT
+================================================================================
+
+Platform: Netlify
+Build Command: npm run build
+Publish Directory: .next
+Plugin: @netlify/plugin-nextjs
+
+Environment Variables Required:
+- GMAIL_USER              - Gmail address for contact form
+- GMAIL_APP_PASSWORD      - Gmail app password
+- NEXT_PUBLIC_SITE_URL    - https://modatepecafe.com
+
+================================================================================

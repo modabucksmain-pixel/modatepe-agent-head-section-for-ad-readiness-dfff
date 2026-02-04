@@ -5,7 +5,7 @@ export function GET() {
 User-agent: *
 Allow: /
 
-Sitemap: https://modatepe.com/sitemap.xml
+Sitemap: https://modatepecafe.com/sitemap.xml
   `.trim();
 
   return new NextResponse(robots, {

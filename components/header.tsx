@@ -9,6 +9,8 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 import { Menu, MessageCircle } from 'lucide-react';
 import type { Locale } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
+import { useScrollLock } from '@/hooks/use-scroll-lock';
+import { useIsMobile, useIsDesktop } from '@/hooks/use-media-query';
 
 interface HeaderProps {
   locale: Locale;
@@ -18,6 +20,11 @@ interface HeaderProps {
 export function Header({ locale, translations }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const isMobile = useIsMobile();
+  const isDesktop = useIsDesktop();
+
+  // Lock scroll when mobile menu is open
+  useScrollLock(isOpen && isMobile);
 
   const navigation = [
     { name: translations.nav.home, href: `/${locale}` },

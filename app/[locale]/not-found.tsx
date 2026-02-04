@@ -15,15 +15,15 @@ export default function NotFound() {
             Aradığınız sayfa mevcut değil veya taşınmış olabilir.
           </p>
         </div>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild className="bg-brand-green hover:bg-green-800">
             <Link href="/tr">
               <Home className="w-4 h-4 mr-2" />
-              Ana Sayfa'ya Dön
+              Ana Sayfa&apos;ya Dön
             </Link>
           </Button>
-          
+
           <Button asChild variant="outline">
             <Link href="javascript:history.back()">
               <ArrowLeft className="w-4 h-4 mr-2" />

@@ -33,7 +33,7 @@ export function Footer({ locale, translations }: FooterProps) {
           <div>
             <h3 className="text-xl font-bold mb-4">Modatepe</h3>
             <p className="text-green-100 text-sm mb-4">
-              Trabzon Ortahisar'ın muhteşem manzarasında yöresel lezzetler ve konforlu konaklama.
+              Trabzon Ortahisar&apos;ın muhteşem manzarasında yöresel lezzetler ve konforlu konaklama.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social) => (
